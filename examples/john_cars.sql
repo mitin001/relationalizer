@@ -1,8 +1,8 @@
 PRAGMA foreign_keys=OFF;
 BEGIN TRANSACTION;
-CREATE TABLE 'undefined' (id INTEGER PRIMARY KEY AUTOINCREMENT, name, age);
+CREATE TABLE 'undefined' (id INTEGER PRIMARY KEY AUTOINCREMENT, 'name', 'age');
 INSERT INTO "undefined" VALUES(1,'John',30);
-CREATE TABLE 'cars' (id INTEGER PRIMARY KEY AUTOINCREMENT, name, undefined_id);
+CREATE TABLE 'cars' (id INTEGER PRIMARY KEY AUTOINCREMENT, 'name', 'undefined_id');
 INSERT INTO "cars" VALUES(1,'Ford',1);
 DELETE FROM sqlite_sequence;
 INSERT INTO "sqlite_sequence" VALUES('undefined',1);

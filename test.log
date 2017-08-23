@@ -7,7 +7,7 @@
    { message: 'datatype mismatch',
      name: 'SqliteError',
      code: 'SQLITE_MISMATCH' },
-  query: 'INSERT INTO \'menu\' (\'id\',\'value\',\'undefined_id\') VALUES ("file","File",1)' }
+  query: 'INSERT INTO \'menu\' (\'id\',\'value\',\'undefined_id\') VALUES (\'file\',\'File\',1)' }
 + sqlite3 file.db .dump
 + for f in '*.json'
 + file=glossary
@@ -16,7 +16,7 @@
    { message: 'datatype mismatch',
      name: 'SqliteError',
      code: 'SQLITE_MISMATCH' },
-  query: 'INSERT INTO \'GlossEntry\' (\'ID\',\'SortAs\',\'GlossTerm\',\'Acronym\',\'Abbrev\',\'GlossSee\',\'GlossList_id\') VALUES ("SGML","SGML","Standard Generalized Markup Language","SGML","ISO 8879:1986","markup",1)' }
+  query: 'INSERT INTO \'GlossEntry\' (\'ID\',\'SortAs\',\'GlossTerm\',\'Acronym\',\'Abbrev\',\'GlossSee\',\'GlossList_id\') VALUES (\'SGML\',\'SGML\',\'Standard Generalized Markup Language\',\'SGML\',\'ISO 8879:1986\',\'markup\',1)' }
 + sqlite3 glossary.db .dump
 + for f in '*.json'
 + file=john_cars
@@ -31,29 +31,14 @@ TypeError: Cannot set property 'cars_id' of undefined
 + for f in '*.json'
 + file=list_of
 + node ../index.js list_of.db
-{ error: 
-   { message: 'near "*": syntax error',
-     name: 'SqliteError',
-     code: 'SQLITE_ERROR' },
-  query: 'INSERT INTO \'allcategories\' (\'*\',\'query_id\') VALUES ("List of African-American Nonfiction Writers",1)' }
 + sqlite3 list_of.db .dump
 + for f in '*.json'
 + file=redirects
 + node ../index.js redirects.db
-{ error: 
-   { message: 'near "from": syntax error',
-     name: 'SqliteError',
-     code: 'SQLITE_ERROR' },
-  query: 'INSERT INTO \'redirects\' (\'from\',\'to\',\'query_id\') VALUES ("Main page","Main Page",1)' }
 + sqlite3 redirects.db .dump
 + for f in '*.json'
 + file=servlet
 + node ../index.js servlet.db
-{ error: 
-   { message: 'near "-": syntax error',
-     name: 'SqliteError',
-     code: 'SQLITE_ERROR' },
-  query: 'INSERT INTO \'servlet\' (\'servlet-name\',\'servlet-class\',\'web-app_id\') VALUES ("cofaxCDS","org.cofax.cds.CDSServlet",1)' }
 + sqlite3 servlet.db .dump
 + for f in '*.json'
 + file=svg

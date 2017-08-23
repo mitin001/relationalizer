@@ -28,9 +28,9 @@ For input:
 - Remove restrictions on input JSON:
   - Attribute names:
     - `id` (fails tests for file.json and glossary.json)
-    - `*` (fails test for list_of.json)
-    - with dashes (fails test for servlet.json)
-    - [SQLite keywords](https://sqlite.org/lang_keywords.html) (fails test for redirects.json)
+    - `*` (DONE)
+    - with dashes (DONE)
+    - [SQLite keywords](https://sqlite.org/lang_keywords.html) (DONE)
   - Array members:
     - all scalars (fails test for john_cars.json)
     - some nulls (fails test for svg.json)
