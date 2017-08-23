@@ -4,15 +4,18 @@ let errors = require("./error_parser.js");
 
 let sqlite3, db;
 const initialize = (file) => {
-  sqlite3 = require("sqlite3").verbose();
-  db = new sqlite3.Database(file);
+  sqlite3 = require("better-sqlite3");
+  db = new sqlite3(file);
 };
 const run = ({query, bindings = []}) => new Promise((resolve, reject) => {
-  db.run(query, bindings, function(error) {
-    let scope = this;
-    if (error) return reject({error: errors.parse(error), scope});
+  try {
+    let stmt = db.prepare(query);
+    let scope = stmt.run(bindings);
     return resolve({scope});
-  });
+  }
+  catch (error) {
+    return reject({error: errors.parse(error)});
+  }
 });
 const destroy = () => db.close();
 

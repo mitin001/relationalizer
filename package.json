@@ -9,6 +9,6 @@
   "author": "Andrey Mitin <mitin001@umn.edu>",
   "license": "ISC",
   "dependencies": {
-    "sqlite3": "^3.1.9"
+    "better-sqlite3": "^3.1.2"
   }
 }

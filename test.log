@@ -1,12 +1,11 @@
 + cd examples
-+ rm file.db john_cars.db list_of.db redirects.db servlet.db widget.db file.sql john_cars.sql list_of.sql redirects.sql servlet.sql widget.sql
++ rm file.db glossary.db john_cars.db list_of.db redirects.db servlet.db svg.db widget.db file.sql glossary.sql john_cars.sql list_of.sql redirects.sql servlet.sql svg.sql widget.sql
 + for f in '*.json'
 + file=file
 + node ../index.js file.db
 { error: 
-   { message: 'SQLITE_MISMATCH: datatype mismatch',
-     name: 'Error',
-     errno: 20,
+   { message: 'datatype mismatch',
+     name: 'SqliteError',
      code: 'SQLITE_MISMATCH' },
   query: 'INSERT INTO \'menu\' (\'id\',\'value\',\'undefined_id\') VALUES ("file","File",1)' }
 + sqlite3 file.db .dump
@@ -14,9 +13,8 @@
 + file=glossary
 + node ../index.js glossary.db
 { error: 
-   { message: 'SQLITE_MISMATCH: datatype mismatch',
-     name: 'Error',
-     errno: 20,
+   { message: 'datatype mismatch',
+     name: 'SqliteError',
      code: 'SQLITE_MISMATCH' },
   query: 'INSERT INTO \'GlossEntry\' (\'ID\',\'SortAs\',\'GlossTerm\',\'Acronym\',\'Abbrev\',\'GlossSee\',\'GlossList_id\') VALUES ("SGML","SGML","Standard Generalized Markup Language","SGML","ISO 8879:1986","markup",1)' }
 + sqlite3 glossary.db .dump
@@ -28,14 +26,14 @@ TypeError: Cannot set property 'cars_id' of undefined
     at links.forEach.linkedKey (/Users/andrey/relationalizer/tools/constraint_satisfier.js:27:9)
     at Array.forEach (native)
     at query.run.then.id (/Users/andrey/relationalizer/tools/constraint_satisfier.js:25:13)
+    at process._tickCallback (internal/process/next_tick.js:109:7)
 + sqlite3 john_cars.db .dump
 + for f in '*.json'
 + file=list_of
 + node ../index.js list_of.db
 { error: 
-   { message: 'SQLITE_ERROR: near "*": syntax error',
-     name: 'Error',
-     errno: 1,
+   { message: 'near "*": syntax error',
+     name: 'SqliteError',
      code: 'SQLITE_ERROR' },
   query: 'INSERT INTO \'allcategories\' (\'*\',\'query_id\') VALUES ("List of African-American Nonfiction Writers",1)' }
 + sqlite3 list_of.db .dump
@@ -43,9 +41,8 @@ TypeError: Cannot set property 'cars_id' of undefined
 + file=redirects
 + node ../index.js redirects.db
 { error: 
-   { message: 'SQLITE_ERROR: near "from": syntax error',
-     name: 'Error',
-     errno: 1,
+   { message: 'near "from": syntax error',
+     name: 'SqliteError',
      code: 'SQLITE_ERROR' },
   query: 'INSERT INTO \'redirects\' (\'from\',\'to\',\'query_id\') VALUES ("Main page","Main Page",1)' }
 + sqlite3 redirects.db .dump
@@ -53,9 +50,8 @@ TypeError: Cannot set property 'cars_id' of undefined
 + file=servlet
 + node ../index.js servlet.db
 { error: 
-   { message: 'SQLITE_ERROR: near "-": syntax error',
-     name: 'Error',
-     errno: 1,
+   { message: 'near "-": syntax error',
+     name: 'SqliteError',
      code: 'SQLITE_ERROR' },
   query: 'INSERT INTO \'servlet\' (\'servlet-name\',\'servlet-class\',\'web-app_id\') VALUES ("cofaxCDS","org.cofax.cds.CDSServlet",1)' }
 + sqlite3 servlet.db .dump

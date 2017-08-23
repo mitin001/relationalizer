@@ -26,7 +26,7 @@ const handle = ({error, query, resolve, reject}) => {
 };
 const retry = ({query, resolve, reject}) => {
   sqlite.run({query})
-    .then(({scope}) => resolve(scope.lastID))
+    .then(({scope}) => resolve(scope.lastInsertROWID))
     .catch(({error}) => handle({error, query, resolve, reject}));
 };
 const run = ({query}) => {
