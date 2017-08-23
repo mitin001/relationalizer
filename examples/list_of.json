@@ -1,0 +1,41 @@
+{
+    "batchcomplete": "",
+    "continue": {
+        "accontinue": "List_of_Equestrian_Sports",
+        "continue": "-||"
+    },
+    "query": {
+        "allcategories": [
+            {
+                "*": "List of African-American Nonfiction Writers"
+            },
+            {
+                "*": "List of African-American Writers"
+            },
+            {
+                "*": "List of Albanians"
+            },
+            {
+                "*": "List of Ambassadors of the Kingdom of the Netherlands"
+            },
+            {
+                "*": "List of Batman characters"
+            },
+            {
+                "*": "List of British television programmes"
+            },
+            {
+                "*": "List of C-SPAN Q&A interviews by year"
+            },
+            {
+                "*": "List of Chabad Houses"
+            },
+            {
+                "*": "List of Chicago Bears Players"
+            },
+            {
+                "*": "List of Entrepreneurs"
+            }
+        ]
+    }
+}

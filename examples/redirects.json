@@ -1,0 +1,18 @@
+{
+    "batchcomplete": "",
+    "query": {
+        "redirects": [
+            {
+                "from": "Main page",
+                "to": "Main Page"
+            }
+        ],
+        "pages": {
+            "15580374": {
+                "pageid": 15580374,
+                "ns": 0,
+                "title": "Main Page"
+            }
+        }
+    }
+}

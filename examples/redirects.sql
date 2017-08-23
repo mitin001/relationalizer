@@ -1,0 +1,11 @@
+PRAGMA foreign_keys=OFF;
+BEGIN TRANSACTION;
+CREATE TABLE 'undefined' (id INTEGER PRIMARY KEY AUTOINCREMENT, batchcomplete);
+INSERT INTO "undefined" VALUES(1,'');
+CREATE TABLE 'query' (id INTEGER PRIMARY KEY AUTOINCREMENT, undefined_id);
+INSERT INTO "query" VALUES(1,1);
+CREATE TABLE 'redirects' (id INTEGER PRIMARY KEY AUTOINCREMENT);
+DELETE FROM sqlite_sequence;
+INSERT INTO "sqlite_sequence" VALUES('undefined',1);
+INSERT INTO "sqlite_sequence" VALUES('query',1);
+COMMIT;

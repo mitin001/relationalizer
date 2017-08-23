@@ -1,0 +1,17 @@
+PRAGMA foreign_keys=OFF;
+BEGIN TRANSACTION;
+CREATE TABLE 'undefined' (id INTEGER PRIMARY KEY AUTOINCREMENT);
+INSERT INTO "undefined" VALUES(1);
+CREATE TABLE 'glossary' (id INTEGER PRIMARY KEY AUTOINCREMENT, title, undefined_id);
+INSERT INTO "glossary" VALUES(1,'example glossary',1);
+CREATE TABLE 'GlossDiv' (id INTEGER PRIMARY KEY AUTOINCREMENT, title, glossary_id);
+INSERT INTO "GlossDiv" VALUES(1,'S',1);
+CREATE TABLE 'GlossList' (id INTEGER PRIMARY KEY AUTOINCREMENT, GlossDiv_id);
+INSERT INTO "GlossList" VALUES(1,1);
+CREATE TABLE 'GlossEntry' (id INTEGER PRIMARY KEY AUTOINCREMENT, SortAs, GlossTerm, Acronym, Abbrev, GlossSee, GlossList_id);
+DELETE FROM sqlite_sequence;
+INSERT INTO "sqlite_sequence" VALUES('undefined',1);
+INSERT INTO "sqlite_sequence" VALUES('glossary',1);
+INSERT INTO "sqlite_sequence" VALUES('GlossDiv',1);
+INSERT INTO "sqlite_sequence" VALUES('GlossList',1);
+COMMIT;
