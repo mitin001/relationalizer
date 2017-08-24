@@ -15,6 +15,10 @@ const addLink = (referenced_id, id) => {
   if (types.get(links[id]) !== types.ARRAY) links[id] = [];
   links[id].push(referenced_id);
 };
+const addTableAndLink = (id, table_id, table) => {
+  addTable(id, table);
+  addLink(id, table_id);
+};
 
 const walk = (obj, constraint) => {
   let id;
@@ -34,14 +38,17 @@ const walk = (obj, constraint) => {
         }
       });
       addRow(id, row);
-      addTable(id, constraint.key);
-      addLink(id, constraint.id);
+      addTableAndLink(id, constraint.id, constraint.key);
+      return;
+    case types.NULL:
+      id = increment();
+      addRow(id, {});
+      addTableAndLink(id, constraint.id, constraint.key);
       return;
     case types.SCALAR:
       id = increment();
       addScalar(id, constraint.key, obj);
-      addTable(id, constraint.key);
-      addLink(id, constraint.id);
+      addTableAndLink(id, constraint.id, constraint.key);
       return;
   }
 };

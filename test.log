@@ -27,17 +27,6 @@
 + for f in '*.json'
 + file=svg
 + node ../index.js svg.db
-TypeError: Cannot convert undefined or null to object
-    at walk (/Users/andrey/relationalizer/tools/relationalize.js:27:14)
-    at obj.map.member (/Users/andrey/relationalizer/tools/relationalize.js:23:32)
-    at Array.map (native)
-    at walk (/Users/andrey/relationalizer/tools/relationalize.js:23:18)
-    at Object.keys.forEach.key (/Users/andrey/relationalizer/tools/relationalize.js:31:20)
-    at Array.forEach (native)
-    at walk (/Users/andrey/relationalizer/tools/relationalize.js:27:24)
-    at Object.keys.forEach.key (/Users/andrey/relationalizer/tools/relationalize.js:31:20)
-    at Array.forEach (native)
-    at walk (/Users/andrey/relationalizer/tools/relationalize.js:27:24)
 + sqlite3 svg.db .dump
 + for f in '*.json'
 + file=widget

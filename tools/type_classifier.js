@@ -2,7 +2,13 @@
 
 const ARRAY = 0, OBJECT = 1, SCALAR = 2; // table row, database, or cell
 const NUMBER = 3, STRING = 4, BOOLEAN = 5; // scalars
-const SYMBOL = 6, UNDEFINED = 7, FUNCTION = 8; // JS constructs
+const SYMBOL = 6, UNDEFINED = 7, FUNCTION = 8, NULL = 9; // JS constructs
+
+const getObjectType = (obj, fallback) => {
+  if (Array.isArray(obj)) return ARRAY;
+  if (obj === null) return NULL;
+  return fallback;
+};
 
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/typeof
 const of = operand => {
@@ -23,11 +29,11 @@ const get = obj => {
     case BOOLEAN:
       return SCALAR;
     case OBJECT:
-      return Array.isArray(obj) ? ARRAY : OBJECT;
+      return getObjectType(obj, OBJECT);
   }
 };
 
 Object.assign(exports, {
-  ARRAY, OBJECT, SCALAR, NUMBER, STRING, BOOLEAN, SYMBOL, UNDEFINED, FUNCTION,
+  ARRAY, OBJECT, SCALAR, NUMBER, STRING, BOOLEAN, SYMBOL, UNDEFINED, FUNCTION, NULL,
   get, of
 });
