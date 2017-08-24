@@ -21,7 +21,7 @@ For output:
 - Switch from .db to .sql:
   - Stop creating an intermediate .db file
   - Stop relying on [sqlite3](https://sqlite.org/cli.html)
-- Include foreign keys
+- Include foreign keys (DONE, restriction: attribute name `parent_id` for any string replacing parent will try to reference column `parent_id` on table `parent`)
 
 For input:
 

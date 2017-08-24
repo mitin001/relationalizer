@@ -3,7 +3,7 @@
 const getRegexMatches = (regex, str) => {
   let m;
   if ((m = regex.exec(str)) !== null) return m;
-}
+};
 
 // e.g. SQLITE_ERROR: no such table: tags
 // e.g. SQLITE_ERROR: table tags has no column named encoder
@@ -20,5 +20,11 @@ const noSuchColumn = str => {
     return {table: m[1], column: m[2]};
   }
 };
+const referencingColumn = str => {
+  let m;
+  if ((m = getRegexMatches(/^(.*)_id$/, str))) {
+    return {table: m[1]};
+  }
+};
 
-Object.assign(exports, {noSuchTable, noSuchColumn});
+Object.assign(exports, {noSuchTable, noSuchColumn, referencingColumn});

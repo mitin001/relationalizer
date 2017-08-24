@@ -1,6 +1,7 @@
 'use strict';
 
 let quoter = require("./sqlite_quote.js");
+let parser = require("./sqlite_error_parser.js");
 
 const getValues = ({keys, object}) => keys.map(key => object[key]);
 
@@ -14,8 +15,15 @@ const stringifyValues = columns => columns.map(column => quote(column)).join();
 const createTable = table => {
   return `CREATE TABLE ${quote(table)} (${quote(`${table}_id`)} INTEGER PRIMARY KEY AUTOINCREMENT)`;
 };
+const attachForeignKeyClause = (alter, column) => {
+  let matches, referencingTable;
+  if ((matches = parser.referencingColumn(column)) && (referencingTable = matches.table)) {
+    return `${alter} REFERENCES ${quote(referencingTable)} (${quote(column)})`;
+  }
+  return alter;
+};
 const addColumn = ({table, column}) => {
-  return `ALTER TABLE ${quote(table)} ADD COLUMN ${quote(column)}`;
+  return attachForeignKeyClause(`ALTER TABLE ${quote(table)} ADD COLUMN ${quote(column)}`, column);
 };
 const insertValues = ({table, columns, values}) => {
   columns = stringifyColumns(columns);
