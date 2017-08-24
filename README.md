@@ -32,6 +32,6 @@ For input:
     - with dashes (DONE)
     - [SQLite keywords](https://sqlite.org/lang_keywords.html) (DONE)
   - Array members:
-    - all scalars (fails test for john_cars.json)
+    - all scalars (DONE, scalar rows have 3 columns: `table_id, table, parent_id` where table is the attribute name, and parent is the parent's attribute name)
     - some nulls (fails test for svg.json)
 

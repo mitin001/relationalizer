@@ -7,22 +7,10 @@
 + for f in '*.json'
 + file=glossary
 + node ../index.js glossary.db
-TypeError: Cannot set property 'GlossDef_id' of undefined
-    at linkRow (/Users/andrey/relationalizer/tools/constraint_satisfier.js:14:59)
-    at links.forEach.linkedKey (/Users/andrey/relationalizer/tools/constraint_satisfier.js:27:9)
-    at Array.forEach (native)
-    at query.run.then.id (/Users/andrey/relationalizer/tools/constraint_satisfier.js:25:13)
-    at process._tickCallback (internal/process/next_tick.js:109:7)
 + sqlite3 glossary.db .dump
 + for f in '*.json'
 + file=john_cars
 + node ../index.js john_cars.db
-TypeError: Cannot set property 'cars_id' of undefined
-    at linkRow (/Users/andrey/relationalizer/tools/constraint_satisfier.js:14:59)
-    at links.forEach.linkedKey (/Users/andrey/relationalizer/tools/constraint_satisfier.js:27:9)
-    at Array.forEach (native)
-    at query.run.then.id (/Users/andrey/relationalizer/tools/constraint_satisfier.js:25:13)
-    at process._tickCallback (internal/process/next_tick.js:109:7)
 + sqlite3 john_cars.db .dump
 + for f in '*.json'
 + file=list_of
@@ -40,16 +28,16 @@ TypeError: Cannot set property 'cars_id' of undefined
 + file=svg
 + node ../index.js svg.db
 TypeError: Cannot convert undefined or null to object
-    at walk (/Users/andrey/relationalizer/tools/relationalize.js:24:14)
-    at obj.map.member (/Users/andrey/relationalizer/tools/relationalize.js:20:32)
+    at walk (/Users/andrey/relationalizer/tools/relationalize.js:27:14)
+    at obj.map.member (/Users/andrey/relationalizer/tools/relationalize.js:23:32)
     at Array.map (native)
-    at walk (/Users/andrey/relationalizer/tools/relationalize.js:20:18)
-    at Object.keys.forEach.key (/Users/andrey/relationalizer/tools/relationalize.js:28:20)
+    at walk (/Users/andrey/relationalizer/tools/relationalize.js:23:18)
+    at Object.keys.forEach.key (/Users/andrey/relationalizer/tools/relationalize.js:31:20)
     at Array.forEach (native)
-    at walk (/Users/andrey/relationalizer/tools/relationalize.js:24:24)
-    at Object.keys.forEach.key (/Users/andrey/relationalizer/tools/relationalize.js:28:20)
+    at walk (/Users/andrey/relationalizer/tools/relationalize.js:27:24)
+    at Object.keys.forEach.key (/Users/andrey/relationalizer/tools/relationalize.js:31:20)
     at Array.forEach (native)
-    at walk (/Users/andrey/relationalizer/tools/relationalize.js:24:24)
+    at walk (/Users/andrey/relationalizer/tools/relationalize.js:27:24)
 + sqlite3 svg.db .dump
 + for f in '*.json'
 + file=widget

@@ -2,12 +2,15 @@
 
 let types = require("./type_classifier.js");
 
-let id, rows, tables, links, scalars;
+let id, rows, tables, links;
 
 const increment = () => id++;
-const addScalar = (id, scalar) => scalars[id] = scalar;
-const addRow = (id, obj) => rows[id] = obj;
 const addTable = (id, table) => tables[id] = table;
+const addRow = (id, obj) => rows[id] = obj;
+const addScalar = (id, table, scalar) => {
+  rows[id] = {};
+  rows[id][table] = scalar;
+};
 const addLink = (referenced_id, id) => {
   if (types.get(links[id]) !== types.ARRAY) links[id] = [];
   links[id].push(referenced_id);
@@ -36,7 +39,7 @@ const walk = (obj, constraint) => {
       return;
     case types.SCALAR:
       id = increment();
-      addScalar(id, obj);
+      addScalar(id, constraint.key, obj);
       addTable(id, constraint.key);
       addLink(id, constraint.id);
       return;
@@ -44,9 +47,9 @@ const walk = (obj, constraint) => {
 };
 
 const relationalize = obj => {
-  id = 0; rows = {}; tables = {}; links = {}; scalars = {};
+  id = 0; rows = {}; tables = {}; links = {};
   walk(obj, {});
-  return {rows, tables, links, scalars};
+  return {rows, tables, links};
 };
 
 Object.assign(exports, {relationalize});
