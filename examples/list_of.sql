@@ -1,12 +1,12 @@
 PRAGMA foreign_keys=OFF;
 BEGIN TRANSACTION;
-CREATE TABLE 'undefined' (id INTEGER PRIMARY KEY AUTOINCREMENT, 'batchcomplete');
+CREATE TABLE 'undefined' ('undefined_id' INTEGER PRIMARY KEY AUTOINCREMENT, 'batchcomplete');
 INSERT INTO "undefined" VALUES(1,'');
-CREATE TABLE 'continue' (id INTEGER PRIMARY KEY AUTOINCREMENT, 'accontinue', 'continue', 'undefined_id');
+CREATE TABLE 'continue' ('continue_id' INTEGER PRIMARY KEY AUTOINCREMENT, 'accontinue', 'continue', 'undefined_id');
 INSERT INTO "continue" VALUES(1,'List_of_Equestrian_Sports','-||',1);
-CREATE TABLE 'query' (id INTEGER PRIMARY KEY AUTOINCREMENT, 'undefined_id');
+CREATE TABLE 'query' ('query_id' INTEGER PRIMARY KEY AUTOINCREMENT, 'undefined_id');
 INSERT INTO "query" VALUES(1,1);
-CREATE TABLE 'allcategories' (id INTEGER PRIMARY KEY AUTOINCREMENT, '*', 'query_id');
+CREATE TABLE 'allcategories' ('allcategories_id' INTEGER PRIMARY KEY AUTOINCREMENT, '*', 'query_id');
 INSERT INTO "allcategories" VALUES(1,'List of African-American Nonfiction Writers',1);
 INSERT INTO "allcategories" VALUES(2,'List of African-American Writers',1);
 INSERT INTO "allcategories" VALUES(3,'List of Albanians',1);

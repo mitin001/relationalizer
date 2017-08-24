@@ -12,7 +12,7 @@ const stringifyValues = columns => columns.map(column => quote(column)).join();
 // https://sqlite.org/lang_altertable.html
 // https://sqlite.org/lang_insert.html
 const createTable = table => {
-  return `CREATE TABLE ${quote(table)} (id INTEGER PRIMARY KEY AUTOINCREMENT)`;
+  return `CREATE TABLE ${quote(table)} (${quote(`${table}_id`)} INTEGER PRIMARY KEY AUTOINCREMENT)`;
 };
 const addColumn = ({table, column}) => {
   return `ALTER TABLE ${quote(table)} ADD COLUMN ${quote(column)}`;

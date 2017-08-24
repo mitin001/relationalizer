@@ -27,7 +27,7 @@ For input:
 
 - Remove restrictions on input JSON:
   - Attribute names:
-    - `id` (fails tests for file.json and glossary.json)
+    - `id` (DONE, new restriction: attribute name pattern like `{parent:{parent_id: X}}` for any string replacing parent)
     - `*` (DONE)
     - with dashes (DONE)
     - [SQLite keywords](https://sqlite.org/lang_keywords.html) (DONE)
