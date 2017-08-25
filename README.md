@@ -20,7 +20,7 @@ For output:
 
 - Switch from .db to .sql:
   - Stop creating an intermediate .db file
-  - Stop relying on [sqlite3](https://sqlite.org/cli.html)
+  - Stop relying on [sqlite3](https://sqlite.org/cli.html) (DONE: an ALTER TABLE statement per each additional column)
 - Include foreign keys (DONE, restriction: attribute name `parent_id` for any string replacing parent will try to reference column `parent_id` on table `parent`)
 
 For input:

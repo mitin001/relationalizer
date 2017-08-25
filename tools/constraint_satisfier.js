@@ -42,13 +42,10 @@ const satisfy = objects => new Promise((resolve, reject) => {
   }
 
   query.initialize({file: objects.file});
-  satisfyNext(() => {
-    query.destroy();
-    resolve({rows, tables, links});
-  }, error => {
-    query.destroy();
-    reject(error);
-  });
+  satisfyNext(
+    () => resolve({sql: query.destroy()}),
+    error => reject({error, sql: query.destroy()})
+  );
 });
 
 Object.assign(exports, {satisfy});

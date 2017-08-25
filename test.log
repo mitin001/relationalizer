@@ -3,32 +3,24 @@
 + for f in '*.json'
 + file=file
 + node ../index.js file.db
-+ sqlite3 file.db .dump
 + for f in '*.json'
 + file=glossary
 + node ../index.js glossary.db
-+ sqlite3 glossary.db .dump
 + for f in '*.json'
 + file=john_cars
 + node ../index.js john_cars.db
-+ sqlite3 john_cars.db .dump
 + for f in '*.json'
 + file=list_of
 + node ../index.js list_of.db
-+ sqlite3 list_of.db .dump
 + for f in '*.json'
 + file=redirects
 + node ../index.js redirects.db
-+ sqlite3 redirects.db .dump
 + for f in '*.json'
 + file=servlet
 + node ../index.js servlet.db
-+ sqlite3 servlet.db .dump
 + for f in '*.json'
 + file=svg
 + node ../index.js svg.db
-+ sqlite3 svg.db .dump
 + for f in '*.json'
 + file=widget
 + node ../index.js widget.db
-+ sqlite3 widget.db .dump
