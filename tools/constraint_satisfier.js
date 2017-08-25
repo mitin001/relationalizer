@@ -41,7 +41,7 @@ const satisfy = objects => new Promise((resolve, reject) => {
     return reject("no unconstrained links");
   }
 
-  query.initialize({file: objects.file});
+  query.initialize(objects.file);
   satisfyNext(
     () => resolve({sql: query.destroy()}),
     error => reject({error, sql: query.destroy()})

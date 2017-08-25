@@ -19,7 +19,7 @@ The only test that passes in the 0.1.0 release is for widget.json.
 For output:
 
 - Switch from .db to .sql:
-  - Stop creating an intermediate .db file
+  - Stop creating an intermediate .db file (DONE: optional, if `[doc.db]` is provided in `node index.js [doc.db]`)
   - Stop relying on [sqlite3](https://sqlite.org/cli.html) (DONE: an ALTER TABLE statement per each additional column)
 - Include foreign keys (DONE, restriction: attribute name `parent_id` for any string replacing parent will try to reference column `parent_id` on table `parent`)
 

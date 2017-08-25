@@ -3,9 +3,9 @@
 let errors = require("./error_parser.js");
 
 let sqlite3, db, log;
-const initialize = (file) => {
+const initialize = file => {
   sqlite3 = require("better-sqlite3");
-  db = new sqlite3(file);
+  db = file ? new sqlite3(file) : new sqlite3("json.db", {memory: true});
   log = [];
 };
 const run = ({query, bindings = []}) => new Promise((resolve, reject) => {

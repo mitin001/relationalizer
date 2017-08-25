@@ -4,7 +4,7 @@ let sqlite = require("./sqlite.js");
 let sqlformat = require("./sqlformat.js");
 let sqlite_errors = require("./sqlite_error_parser.js");
 
-const initialize = ({file = "json.db"}) => sqlite.initialize(file);
+const initialize = file => sqlite.initialize(file);
 const destroy = () => sqlite.destroy();
 
 const handle = ({error, query, resolve, reject}) => {
