@@ -1,6 +1,6 @@
 {
   "name": "relationalizer",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Convert JSON to SQL",
   "main": "index.js",
   "scripts": {
